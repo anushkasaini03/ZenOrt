@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location-based Task Reminder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Location-based Task Reminder</h1>
+      <div id="userLocation">
+        <button id="enableLocation">Enable Location Tracking</button>
+        <span id="locationStatus"></span>
+      </div>
+      <div id="searchAddress">
+        <input type="text" id="addressInput" placeholder="Enter an address" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <form id="taskForm">
+        <input type="text" id="title" placeholder="Task Title" required />
+        <input
+          type="text"
+          id="description"
+          placeholder="Task Description"
+          required
+        />
+        <input type="text" id="location" placeholder="Location" required />
+        <input type="datetime-local" id="datetime" required />
+        <div id="map"></div>
+        <button type="submit">Add Task</button>
+      </form>
+      <table id="taskTable">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Date & Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+      </table>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
